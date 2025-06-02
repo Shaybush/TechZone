@@ -36,9 +36,10 @@ function ProductCard({ product }: { product: Product }) {
         <div className="flex justify-between items-center mb-3">
           <span className="text-lg font-bold">${product.price}</span>
           <div className="flex items-center gap-2">
+            {/* TODO - use component of button. one for rounded second for regular one */}
             <button
               onClick={() => handleQuantityChange(quantity - 1)}
-              className="bg-blue-500 text-white w-8 h-8 rounded-full hover:bg-blue-600 flex items-center justify-center font-bold"
+              className="bg-blue-500 text-white w-8 h-8 rounded-full hover:bg-blue-600 flex items-center justify-center font-bold disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={quantity === 0}
             >
               -

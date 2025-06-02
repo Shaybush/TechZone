@@ -2,12 +2,17 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import type { BasketItem, BasketState, Product } from '../../types/store';
 
+// TODO: take a look on user folder. this is how it should look like.
+
 const initialState: BasketState = {
   items: [],
   loading: false,
   error: null,
 };
 
+// TODO: createAsyncThunk it's old fashion way to hundle api request.
+// better to use react query or RTX redux query.
+// take a look on this PR on github - https://github.com/danbiton/assignment-ort/pull/2 
 export const fetchBasket = createAsyncThunk(
   'basket/fetchBasket',
   async () => {
